@@ -1,27 +1,30 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     var themeData = ThemeData(
-        
-        scaffoldBackgroundColor: const Color.fromARGB(255, 91, 132, 155),
-      );
+      scaffoldBackgroundColor: const Color.fromARGB(255, 91, 132, 155),
+    );
     return MaterialApp(
       title: 'Biruni Üniversitesi',
       theme: themeData,
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: const LoginPage(),
     );
   }
 }
 
 // Giriş Ekranı
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -34,18 +37,18 @@ class _LoginPageState extends State<LoginPage> {
     if (_usernameController.text == "admin" && _passwordController.text == "1234") {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => const HomePage()),
       );
     } else {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text("Hata"),
-          content: Text("Kullanıcı adı veya şifre hatalı."),
+          title: const Text("Hata"),
+          content: const Text("Kullanıcı adı veya şifre hatalı."),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text("Tamam"),
+              child: const Text("Tamam"),
             ),
           ],
         ),
@@ -57,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Biruni Üniversitesi'),
+        title: const Text('Biruni Üniversitesi'),
         centerTitle: true,
         elevation: 2,
       ),
@@ -67,11 +70,11 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Hoş Geldiniz!',
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextField(
                 controller: _usernameController,
                 decoration: InputDecoration(
@@ -81,10 +84,10 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: const Icon(Icons.person),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextField(
                 controller: _passwordController,
                 obscureText: true,
@@ -95,27 +98,27 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: const Icon(Icons.lock),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _login,
-                child: Text('Giriş Yap'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
+                child: const Text('Giriş Yap'),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextButton(
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   'Şifremi Unuttum',
-                  style: TextStyle(color: const Color.fromARGB(255, 175, 46, 50)),
+                  style: TextStyle(color: Color.fromARGB(255, 175, 46, 50)),
                 ),
               ),
             ],
@@ -128,17 +131,16 @@ class _LoginPageState extends State<LoginPage> {
 
 // Ana Sayfa
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ana Sayfa'),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 200, 200, 200)
-      ),
+          title: const Text('Ana Sayfa'), centerTitle: true, backgroundColor: const Color.fromARGB(255, 200, 200, 200)),
       body: GridView.builder(
-        padding: EdgeInsets.all(16),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        padding: const EdgeInsets.all(16),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
@@ -146,12 +148,12 @@ class HomePage extends StatelessWidget {
         itemCount: 6,
         itemBuilder: (context, index) {
           final items = [
-            {'icon': Icons.info, 'label': 'Hakkında', 'page': AboutPage()},
-            {'icon': Icons.map, 'label': 'Kampüs Haritası', 'page': CampusMapPage()},
-            {'icon': Icons.event, 'label': 'Etkinlikler', 'page': EventsPage()},
-            {'icon': Icons.book, 'label': 'Programlar', 'page': ProgramsPage()},
-            {'icon': Icons.contact_mail, 'label': 'İletişim', 'page': ContactPage()},
-            {'icon': Icons.settings, 'label': 'Ayarlar', 'page': SettingsPage()},
+            {'icon': Icons.info, 'label': 'Hakkında', 'page': const AboutPage()},
+            {'icon': Icons.map, 'label': 'Kampüs Haritası', 'page': const CampusMapPage()},
+            {'icon': Icons.event, 'label': 'Etkinlikler', 'page': const EventsPage()},
+            {'icon': Icons.book, 'label': 'Programlar', 'page': const ProgramsPage()},
+            {'icon': Icons.contact_mail, 'label': 'İletişim', 'page': const ContactPage()},
+            {'icon': Icons.settings, 'label': 'Ayarlar', 'page': const SettingsPage()},
           ];
           final item = items[index];
 
@@ -172,7 +174,7 @@ class HomePage extends StatelessWidget {
                   BoxShadow(
                     color: Colors.grey.shade300,
                     blurRadius: 10,
-                    offset: Offset(0, 5),
+                    offset: const Offset(0, 5),
                   ),
                 ],
               ),
@@ -180,10 +182,10 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(item['icon'] as IconData, size: 40, color: Colors.indigo),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     item['label'] as String,
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
@@ -197,6 +199,8 @@ class HomePage extends StatelessWidget {
 
 // Sayfa Şablonları
 class AboutPage extends StatelessWidget {
+  const AboutPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return buildSimplePage(context, "Hakkında", "Biruni Üniversitesi hakkında bilgiler.");
@@ -204,6 +208,8 @@ class AboutPage extends StatelessWidget {
 }
 
 class CampusMapPage extends StatelessWidget {
+  const CampusMapPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return buildSimplePage(context, "Kampüs Haritası", "Kampüs içerisindeki bina ve olanakların haritası.");
@@ -211,6 +217,8 @@ class CampusMapPage extends StatelessWidget {
 }
 
 class EventsPage extends StatelessWidget {
+  const EventsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return buildSimplePage(context, "Etkinlikler", "Üniversitedeki etkinlikler ve duyurular.");
@@ -218,6 +226,8 @@ class EventsPage extends StatelessWidget {
 }
 
 class ProgramsPage extends StatelessWidget {
+  const ProgramsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return buildSimplePage(context, "Akademik Programlar", "Üniversitenin sunduğu akademik programlar.");
@@ -225,6 +235,8 @@ class ProgramsPage extends StatelessWidget {
 }
 
 class ContactPage extends StatelessWidget {
+  const ContactPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return buildSimplePage(context, "İletişim", "Üniversite ile iletişime geçmek için gerekli bilgiler.");
@@ -232,6 +244,8 @@ class ContactPage extends StatelessWidget {
 }
 
 class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return buildSimplePage(context, "Ayarlar", "Uygulama ayarlarını değiştirin.");
@@ -245,7 +259,7 @@ Widget buildSimplePage(BuildContext context, String title, String content) {
     body: Center(
       child: Text(
         content,
-        style: TextStyle(fontSize: 18),
+        style: const TextStyle(fontSize: 18),
         textAlign: TextAlign.center,
       ),
     ),

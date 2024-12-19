@@ -1,29 +1,14 @@
+import 'package:deneme/alper/register_page.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class LoginPageAlper extends StatefulWidget {
+  const LoginPageAlper({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-    );
-  }
+  State<LoginPageAlper> createState() => _LoginPageAlperState();
 }
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageAlperState extends State<LoginPageAlper> {
   double _opacity = 0.0;
 
   @override
@@ -133,6 +118,11 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterPageAlper()));
+                },
+                child: const Text('Kayıt Ol')),
             const SizedBox(height: 16),
             GestureDetector(
               onTap: () {
