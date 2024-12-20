@@ -1,23 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-    );
-  }
-}
-
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final VoidCallback onThemeToggle; // Tema değiştirme fonksiyonu
+  final bool isBlueLight; // Mavi ışık modunun açık olup olmadığını kontrol eder
+
+  const LoginPage({super.key, required this.onThemeToggle, required this.isBlueLight});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -40,6 +27,19 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 55, 53, 186),
+        title: const Text("Biruni Üniversitesi"),
+        actions: [
+          IconButton(
+            icon: Icon(
+              widget.isBlueLight ? Icons.lightbulb : Icons.brightness_6,
+              color: widget.isBlueLight ? Colors.orange : null,
+            ),
+            onPressed: widget.onThemeToggle,
+          ),
+        ],
+      ),
       body: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   const SizedBox(height: 150),
                   Image.asset(
-                    'assets/images/biruni_logo.png',
+                    'assets/images/biruni_logo.png', // Logo dosyasını eklediğinizden emin olun
                     height: 150,
                   ),
                   const SizedBox(height: 16),
@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: Colors.white,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -82,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
             const SizedBox(height: 32),
@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 onPressed: () {
-                  // Login işlemi burada yapılabilir
+                  Navigator.pushNamed(context, '/home'); // Ana sayfaya yönlendir
                 },
                 child: const Text(
                   "Log In",
@@ -136,12 +136,12 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 16),
             GestureDetector(
               onTap: () {
-                // Şifremi Unuttum işlemi burada yapılabilir
+                Navigator.pushNamed(context, '/register'); // Kayıt ol sayfasına yönlendir
               },
               child: const Text(
-                "Forgot Password?",
+                "Kayıt Ol",
                 style: TextStyle(
-                  color: Color.fromARGB(255, 18, 11, 2),
+                  color: Colors.white,
                   fontSize: 16,
                   decoration: TextDecoration.underline,
                 ),
