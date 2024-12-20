@@ -1,13 +1,10 @@
-import 'package:deneme/akademik_page.dart';
-import 'package:deneme/duyurularveetkinlikler_page.dart';
-import 'package:deneme/iletisim_page.dart';
-
+import 'package:deneme/pages/about_page.dart';
+import 'package:deneme/pages/academic_page.dart';
+import 'package:deneme/pages/announcements_page.dart';
+import 'package:deneme/pages/contact_page.dart';
 import 'package:flutter/material.dart';
-import 'contact_page.dart';
-import 'school_info_page.dart';
-import 'academic_page.dart';
-import 'announcements_page.dart';
-import 'aday_ogrenci_page.dart';
+
+import 'profile_page.dart';
 
 class HomePage extends StatelessWidget {
   final VoidCallback onThemeToggle; // Tema değiştirme fonksiyonu
@@ -20,7 +17,6 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Ana Sayfam'),
-        
         backgroundColor: const Color.fromARGB(255, 55, 53, 186),
         actions: [
           IconButton(
@@ -40,7 +36,7 @@ class HomePage extends StatelessWidget {
         children: [
           _buildGridItem(context, 'Üniversitemiz Hakkında', Icons.info, const ContactPage()),
           _buildGridItem(context, 'İletişim', Icons.contact_mail, const ContactPage()),
-          _buildGridItem(context, 'Kampüslerimiz', Icons.school, const universitemizhakkindaPage() as Widget),
+          _buildGridItem(context, 'Kampüslerimiz', Icons.school, const AboutPage()),
           _buildGridItem(context, 'Akademik', Icons.book, const AcademicPage()),
           _buildGridItem(context, 'Duyurular ve Etkinlikler', Icons.announcement, const AnnouncementsPage()),
           _buildGridItem(context, 'Aday Öğrenci', Icons.person, const ProfilePage()),
@@ -50,7 +46,6 @@ class HomePage extends StatelessWidget {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Ana Sayfa'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profil'),
-          
         ],
         onTap: (index) {
           if (index == 0) {
@@ -100,10 +95,6 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-  
-  icon(IconData add_to_home_screen_sharp) {}
-}
 
-class universitemizhakkindaPage {
-  const universitemizhakkindaPage();
+  icon(IconData addToHomeScreenSharp) {}
 }

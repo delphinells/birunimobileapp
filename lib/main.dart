@@ -1,22 +1,13 @@
-import 'package:deneme/school_info_page.dart';
+import 'package:deneme/pages/about_page.dart';
+import 'package:deneme/pages/academic_page.dart';
+import 'package:deneme/pages/announcements_page.dart';
+import 'package:deneme/pages/contact_page.dart';
+import 'package:deneme/pages/home_page.dart';
+import 'package:deneme/pages/login_page.dart';
+import 'package:deneme/pages/profile_page.dart';
+import 'package:deneme/pages/register_page.dart';
+import 'package:deneme/pages/school_info_page.dart';
 import 'package:flutter/material.dart';
-import 'package:deneme/akademik_page.dart';
-import 'package:deneme/duyurularveetkinlikler_page.dart';
-import 'package:deneme/home_page.dart';
-import 'package:deneme/iletisim_page.dart';
-import 'package:deneme/login_page.dart';
-import 'package:deneme/aday_ogrenci_page.dart';
-import 'package:deneme/register_page.dart';
-import 'about_page.dart';
-import 'home_page.dart';
-import 'profile_page.dart';
-import 'about_page.dart';
-import 'contact_page.dart';
-import 'school_info_page.dart';
-import 'academic_page.dart';
-import 'announcements_page.dart';
-import 'register_page.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -85,9 +76,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-class AboutPage {
-  const AboutPage();
-}
-
-
