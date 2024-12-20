@@ -1,4 +1,4 @@
-package com.example.deneme
+package com.example.biruniapp
 
 import io.flutter.embedding.android.FlutterActivity
 

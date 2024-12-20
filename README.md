@@ -1,4 +1,4 @@
-# deneme
+# biruniapp
 
 A new Flutter project.
 

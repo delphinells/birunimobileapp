@@ -1,12 +1,13 @@
-import 'package:deneme/pages/about_page.dart';
-import 'package:deneme/pages/academic_page.dart';
-import 'package:deneme/pages/announcements_page.dart';
-import 'package:deneme/pages/contact_page.dart';
-import 'package:deneme/pages/home_page.dart';
-import 'package:deneme/pages/login_page.dart';
-import 'package:deneme/pages/profile_page.dart';
-import 'package:deneme/pages/register_page.dart';
-import 'package:deneme/pages/school_info_page.dart';
+
+import 'package:biruniapp/pages/about_page.dart';
+import 'package:biruniapp/pages/academic_page.dart';
+import 'package:biruniapp/pages/announcements_page.dart';
+import 'package:biruniapp/pages/contact_page.dart';
+import 'package:biruniapp/pages/home_page.dart';
+import 'package:biruniapp/pages/login_page.dart';
+import 'package:biruniapp/pages/profile_page.dart';
+import 'package:biruniapp/pages/register_page.dart';
+import 'package:biruniapp/pages/school_info_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

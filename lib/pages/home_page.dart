@@ -1,7 +1,9 @@
-import 'package:deneme/pages/about_page.dart';
-import 'package:deneme/pages/academic_page.dart';
-import 'package:deneme/pages/announcements_page.dart';
-import 'package:deneme/pages/contact_page.dart';
+
+import 'package:biruniapp/pages/about_page.dart';
+import 'package:biruniapp/pages/academic_page.dart';
+import 'package:biruniapp/pages/announcements_page.dart';
+import 'package:biruniapp/pages/contact_page.dart';
+import 'package:biruniapp/pages/school_info_page.dart';
 import 'package:flutter/material.dart';
 
 import 'profile_page.dart';
@@ -34,7 +36,7 @@ class HomePage extends StatelessWidget {
         crossAxisSpacing: 17.0,
         mainAxisSpacing: 16.0,
         children: [
-          _buildGridItem(context, 'Üniversitemiz Hakkında', Icons.info, const ContactPage()),
+          _buildGridItem(context, 'Üniversitemiz Hakkında', Icons.info, const SchoolInfoPage()),
           _buildGridItem(context, 'İletişim', Icons.contact_mail, const ContactPage()),
           _buildGridItem(context, 'Kampüslerimiz', Icons.school, const AboutPage()),
           _buildGridItem(context, 'Akademik', Icons.book, const AcademicPage()),
