@@ -8,7 +8,7 @@ class ContactPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('İletişim'),
-        backgroundColor: const Color.fromARGB(255, 55, 53, 186),
+        backgroundColor: const Color.fromARGB(255, 245, 245, 247),
       ),
       body: SingleChildScrollView(
         child: Column(

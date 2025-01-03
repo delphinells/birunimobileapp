@@ -1,9 +1,10 @@
 
 import 'package:biruniapp/pages/about_page.dart';
 import 'package:biruniapp/pages/academic_page.dart';
+import 'package:biruniapp/pages/aday_ogrenci.dart';
 import 'package:biruniapp/pages/announcements_page.dart';
 import 'package:biruniapp/pages/contact_page.dart';
-import 'package:biruniapp/pages/school_info_page.dart';
+import 'package:biruniapp/pages/campuses_info_page.dart';
 import 'package:flutter/material.dart';
 
 import 'profile_page.dart';
@@ -36,12 +37,12 @@ class HomePage extends StatelessWidget {
         crossAxisSpacing: 17.0,
         mainAxisSpacing: 16.0,
         children: [
-          _buildGridItem(context, 'Üniversitemiz Hakkında', Icons.info, const SchoolInfoPage()),
+          _buildGridItem(context, 'Üniversitemiz Hakkında', Icons.info, const AboutPage()),
           _buildGridItem(context, 'İletişim', Icons.contact_mail, const ContactPage()),
-          _buildGridItem(context, 'Kampüslerimiz', Icons.school, const AboutPage()),
-          _buildGridItem(context, 'Akademik', Icons.book, const AcademicPage()),
-          _buildGridItem(context, 'Duyurular ve Etkinlikler', Icons.announcement, const AnnouncementsPage()),
-          _buildGridItem(context, 'Aday Öğrenci', Icons.person, const ProfilePage()),
+          _buildGridItem(context, 'Kampüslerimiz', Icons.school,  const CampusesInfoPage()),
+          _buildGridItem(context, 'Akademik', Icons.book, AkademikPage()),
+          _buildGridItem(context, 'Duyurular ve Etkinlikler', Icons.announcement, AnnouncementsPage()),
+          _buildGridItem(context, 'Aday Öğrenci', Icons.person, AdayOgrenci()),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -55,7 +56,7 @@ class HomePage extends StatelessWidget {
           } else if (index == 1) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const ProfilePage()),
+              MaterialPageRoute(builder: (context) => ProfilePage()),
             );
           }
         },
@@ -100,3 +101,5 @@ class HomePage extends StatelessWidget {
 
   icon(IconData addToHomeScreenSharp) {}
 }
+
+

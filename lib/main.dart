@@ -1,13 +1,15 @@
 
 import 'package:biruniapp/pages/about_page.dart';
 import 'package:biruniapp/pages/academic_page.dart';
+import 'package:biruniapp/pages/aday_ogrenci.dart';
+
 import 'package:biruniapp/pages/announcements_page.dart';
 import 'package:biruniapp/pages/contact_page.dart';
 import 'package:biruniapp/pages/home_page.dart';
 import 'package:biruniapp/pages/login_page.dart';
 import 'package:biruniapp/pages/profile_page.dart';
 import 'package:biruniapp/pages/register_page.dart';
-import 'package:biruniapp/pages/school_info_page.dart';
+import 'package:biruniapp/pages/campuses_info_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -67,12 +69,13 @@ class _MyAppState extends State<MyApp> {
         '/': (context) => LoginPage(onThemeToggle: _toggleTheme, isBlueLight: _isBlueLight),
         '/home': (context) => HomePage(onThemeToggle: _toggleTheme, isBlueLight: _isBlueLight),
         '/register': (context) => const RegisterPage(),
-        '/profile': (context) => const ProfilePage(),
+        '/profile': (context) => ProfilePage(),
         '/about': (context) => const AboutPage(),
         '/contact': (context) => const ContactPage(),
-        '/school_info': (context) => const SchoolInfoPage(),
-        '/academic': (context) => const AcademicPage(),
-        '/announcements': (context) => const AnnouncementsPage(),
+        '/school_info': (context) =>  const CampusesInfoPage(),
+        '/academic': (context) => AkademikPage(),
+        '/announcements': (context) => AnnouncementsPage(),
+        'adayogrenci': (context) => AdayOgrenci(),
       },
     );
   }
